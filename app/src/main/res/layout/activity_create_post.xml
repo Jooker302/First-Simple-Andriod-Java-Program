@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_200"
+    tools:context=".CreatePost">
+
+    <TextView
+        android:id="@+id/posttile"
+        android:layout_width="181dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="64dp"
+        android:text="Create Post"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/posttitlebutton"
+        android:layout_width="242dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/posttile" />
+
+    <EditText
+        android:id="@+id/postprice"
+        android:layout_width="242dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/posttitlebutton" />
+
+    <EditText
+        android:id="@+id/postcontact"
+        android:layout_width="242dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Contact No"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postprice" />
+
+    <Button
+        android:id="@+id/addbutton"
+        android:layout_width="144dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="56dp"
+        android:onClick="createpost"
+        android:text="Create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postcontact" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
