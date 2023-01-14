@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +25,8 @@ public class Signin extends AppCompatActivity {
 
         if(check == true){
             Toast.makeText(this,"Login In Successful",Toast.LENGTH_LONG).show();
+            Intent i = new Intent(this, Home.class);
+            startActivity(i);
         }else{
             Toast.makeText(this,"Incorrect Email or Password",Toast.LENGTH_LONG).show();
         }

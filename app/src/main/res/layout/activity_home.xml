@@ -26,6 +26,7 @@
         android:layout_height="59dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
+        android:onClick="createpost"
         android:text="Create Post"
         app:layout_constraintEnd_toStartOf="@+id/viewbutton"
         app:layout_constraintStart_toStartOf="parent"

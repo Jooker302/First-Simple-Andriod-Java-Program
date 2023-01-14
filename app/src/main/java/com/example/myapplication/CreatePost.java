@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CreatePost extends AppCompatActivity {
 
@@ -18,5 +19,20 @@ public class CreatePost extends AppCompatActivity {
         EditText title = findViewById(R.id.posttitlebutton);
         EditText price = findViewById(R.id.postprice);
         EditText contact = findViewById(R.id.postcontact);
+
+        try {
+            PostClass post = new PostClass(title.getText().toString(),price.getText().toString(),contact.getText().toString());
+//            Toast.makeText(this,post.toString(),Toast.LENGTH_LONG).show();
+            DatabaseHelper db = new DatabaseHelper(CreatePost.this);
+            boolean check = db.createonepost(post);
+            if(check == true){
+                Toast.makeText(this,"Post Created",Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(this,"Issue in Creating Post...",Toast.LENGTH_LONG).show();
+            }
+
+        }catch (Exception e){
+            Toast.makeText(this,"Error Creating Post...",Toast.LENGTH_LONG).show();
+        }
     }
 }
