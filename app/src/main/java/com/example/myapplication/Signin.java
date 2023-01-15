@@ -17,7 +17,7 @@ public class Signin extends AppCompatActivity {
     }
 
     public void signin(View v){
-        EditText name = findViewById(R.id.fieldname);
+        EditText name = findViewById(R.id.fieldemail);
         EditText password = findViewById(R.id.fieldpassword);
 //        Toast.makeText(this,email.getText().toString(),Toast.LENGTH_LONG).show();
         DatabaseHelper db = new DatabaseHelper(Signin.this);

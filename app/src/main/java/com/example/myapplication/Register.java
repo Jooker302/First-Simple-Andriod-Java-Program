@@ -18,7 +18,7 @@ public class Register extends AppCompatActivity {
     public void register(View v){
 
         EditText name = findViewById(R.id.feildname);
-        EditText email = findViewById(R.id.fieldname);
+        EditText email = findViewById(R.id.fieldemail);
         EditText password = findViewById(R.id.fieldpassword);
 
         try {

@@ -69,7 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean checksignin(String name, String password){
 
 //        String query = "SELECT * FROM " + USERS + " WHERE " + EMAIL + " = " + email + " AND WHERE " + PASSWORD + " = " + password;
-        String query = "SELECT * FROM " + USERS + " WHERE " + NAME + " = '" + name + "' AND " + PASSWORD + " = '" + password + "'";
+        String query = "SELECT * FROM " + USERS + " WHERE " + EMAIL + " = '" + name + "' AND " + PASSWORD + " = '" + password + "'";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor result = db.rawQuery(query,null);

@@ -49,4 +49,9 @@ public class Home extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void logout(View v){
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
+    }
+
 }
