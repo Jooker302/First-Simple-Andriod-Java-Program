@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_200"
-    tools:context=".Home">
+    tools:context=".AdminHome">
 
     <TextView
         android:id="@+id/textView"
@@ -20,39 +20,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/createbtn"
-        android:layout_width="128dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:onClick="createpost"
-        android:text="Create Post"
-        app:layout_constraintEnd_toStartOf="@+id/viewbutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/viewbutton"
-        android:layout_width="128dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="viewpost"
-        android:text="View"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/createbtn"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/buttonlogout"
         android:layout_width="128dp"
         android:layout_height="59dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="50dp"
         android:onClick="logout"
         android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/deletebtn"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/deletebtn"
+        android:layout_width="128dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="50dp"
+        android:onClick="deletepost"
+        android:text="Delete"
+        app:layout_constraintEnd_toStartOf="@+id/buttonlogout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

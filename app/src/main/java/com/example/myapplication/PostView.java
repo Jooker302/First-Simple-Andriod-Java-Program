@@ -22,7 +22,8 @@ public class PostView extends AppCompatActivity {
         ListView listposts = findViewById(R.id.listpost);
         DatabaseHelper db = new DatabaseHelper(PostView.this);
         List<PostClass> allposts = db.posts();
-        ArrayAdapter postarrayadapter = new ArrayAdapter<PostClass>(PostView.this, android.R.layout.simple_list_item_1,allposts);
+//        ArrayAdapter postarrayadapter = new ArrayAdapter<PostClass>(PostView.this, android.R.layout.simple_list_item_1,allposts);
+        ArrayAdapter postarrayadapter = new ArrayAdapter<PostClass>(PostView.this, android.R.layout.simple_expandable_list_item_1,allposts);
         listposts.setAdapter(postarrayadapter);
     }
 }

@@ -48,6 +48,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean addone(UserClass newUser){
 
+
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -55,14 +57,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(EMAIL,newUser.getEmail());
         cv.put(PASSWORD,newUser.getPassword());
 
-        long check = db.insert(USERS,null,cv);
+        String query = "SELECT * FROM " + USERS + " WHERE " + EMAIL + " = '" + newUser.getName() + "'";
+        Cursor checkuser = db.rawQuery(query,null);
 
-        if(check == -1){
+        if(checkuser.moveToFirst()){
             return false;
         }else {
-            return true;
-        }
 
+
+            long check = db.insert(USERS, null, cv);
+
+            if (check == -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
 //        return true;
     }
 
@@ -133,5 +143,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return allposts;
+    }
+
+
+    public boolean deletepost(PostClass post){
+
+        String deletequery = "DELETE FROM " + POSTSTABLE + " WHERE " + TITLEPOST + " = '" + post.getTitle() + "' AND " + PRICEPOST + " = '" + post.getPrice() + "' AND " + CONTACTPOST + " = '" + post.getContact() + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor result = db.rawQuery(deletequery,null);
+
+        if(result.moveToFirst()){
+            return true;
+        }else {
+            return true;
+        }
+
+
+
+//        return false;
     }
 }
