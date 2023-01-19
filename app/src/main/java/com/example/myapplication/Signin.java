@@ -16,6 +16,13 @@ public class Signin extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
     }
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        Intent i = new Intent(this,MainActivity.class);
+        startActivity(i);
+    }
+
     public void signin(View v) {
         EditText name = findViewById(R.id.fieldemail);
         EditText password = findViewById(R.id.fieldpassword);
